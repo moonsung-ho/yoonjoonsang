@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
 
 * {
   font-family: "Pretendard Variable", Pretendard, -apple-system,
@@ -22,7 +23,7 @@ body {
 header {
   height: 100vh;
   background: url(./images/background-main.webp);
-  background-size: 250%;
+  background-size: 300%;
   background-position: center;
   background-repeat: space;
   background-attachment: fixed;
@@ -47,4 +48,10 @@ section {
 a {
   color: #6495ed;
   text-decoration: none;
+}
+
+#share {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
 }
