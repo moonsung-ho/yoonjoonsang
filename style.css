@@ -21,7 +21,7 @@ body {
 
 header {
   height: 100vh;
-  background: url(/images/background-main.jpg);
+  background: url(./images/background-main.webp);
   background-size: 250%;
   background-position: center;
   background-repeat: space;
