@@ -21,7 +21,7 @@ body {
 }
 
 header {
-  height: 100vh;
+  height: 95vh;
   background: url(./images/background-main.webp);
   background-size: 300%;
   background-position: center;
@@ -54,4 +54,25 @@ a {
   position: fixed;
   right: 10px;
   bottom: 10px;
+}
+
+#warning {
+  left: 0;
+  right: 0;
+  animation: bounce 1s infinite alternate;
+  transition: initial 0.5s ease-in-out;
+}
+
+#warning > span {
+  background-color: darkorange;
+  width: fit-content;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
 }
