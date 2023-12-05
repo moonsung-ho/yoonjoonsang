@@ -9,13 +9,14 @@ let warningObserver = new IntersectionObserver((e) => {
     entry.target.style["position"] = entry.isIntersecting
       ? "fixed"
       : "absolute";
+    entry.target.style.display = "block";
     entry.target.style["bottom"] = entry.isIntersecting ? "12px" : "-200px";
   });
   setTimeout(() => {
     e.forEach((entry) => {
       entry.target.style.display = "none";
     });
-  }, 15000);
+  }, 5000);
 });
 
 let about = document.querySelector("#about");
