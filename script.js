@@ -9,7 +9,7 @@ let warningObserver = new IntersectionObserver((e) => {
     entry.target.style["position"] = entry.isIntersecting
       ? "fixed"
       : "absolute";
-    entry.target.style["bottom"] = entry.isIntersecting ? "20px" : "-200px";
+    entry.target.style["bottom"] = entry.isIntersecting ? "12px" : "-200px";
   });
   setTimeout(() => {
     e.forEach((entry) => {
@@ -32,14 +32,42 @@ observer.observe(history);
 
 warningObserver.observe(warning);
 
-if (typeof navigator.share === "undefined") {
-  // 공유하기 버튼을 지원하지 않는 경우에 대한 폴백 처리
-  document.querySelector("#share").hidden = true;
-} else {
-  document.querySelector("#share").addEventListener("click", () => {
-    navigator.share({
-      title: "전교 회장 후보 윤준상", // 공유될 제목
-      url: "https://joonsang.netlify.app", // 공유될 URL
-    });
+// if (typeof navigator.share === "undefined") {
+//   // 공유하기 버튼을 지원하지 않는 경우에 대한 폴백 처리
+//   document.querySelector("#share").hidden = true;
+// } else {
+//   document.querySelector("#share").addEventListener("click", () => {
+//     navigator.share({
+//       title: "전교 회장 후보 윤준상", // 공유될 제목
+//       url: "https://joonsang.netlify.app", // 공유될 URL
+//     });
+//   });
+// }
+
+let heart = false;
+
+document.querySelector("#title-name").addEventListener("click", () => {
+  heart = !heart;
+  if (heart) {
+    document.querySelector("#title-name").innerHTML = "❤️윤준상❤️";
+  } else {
+    document.querySelector("#title-name").innerHTML = "윤준상";
+  }
+});
+
+let nameHeart = false;
+
+document.querySelectorAll("#name").forEach((e) => {
+  e.addEventListener("click", () => {
+    nameHeart = !nameHeart;
+    if (nameHeart) {
+      e.innerHTML = `${e.innerHTML}❤️`;
+    } else {
+      e.innerHTML = `${e.innerHTML.replace("❤️", "")}`;
+    }
   });
-}
+});
+
+document.querySelector("#warning").addEventListener("click", () => {
+  document.querySelector("#warning").style.display = "none";
+});
