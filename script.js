@@ -59,12 +59,7 @@ let nameHeart = false;
 
 document.querySelectorAll("#name").forEach((e) => {
   e.addEventListener("click", () => {
-    nameHeart = !nameHeart;
-    if (nameHeart) {
-      e.innerHTML = `${e.innerHTML}❤️`;
-    } else {
-      e.innerHTML = `${e.innerHTML.replace("❤️", "")}`;
-    }
+    e.innerHTML = `${e.innerHTML}❤️`;
   });
 });
 
